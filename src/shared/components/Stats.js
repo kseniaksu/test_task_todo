@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import { addPropLoggerHOC } from "./HOC/addLogger";
 
 function Stats(props) {
     let total = props.todos.length;
@@ -28,4 +29,4 @@ function Stats(props) {
 // Stats.propTypes = {
 //     todos: React.PropTypes.array.isRequired
 // };
-export default Stats;
+export default addPropLoggerHOC('todos')(Stats);

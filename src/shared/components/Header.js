@@ -2,12 +2,13 @@ import React from 'react';
 import ReactDom from 'react-dom';
 
 import Stats from "./Stats";
+import { addLoggerHOC } from "./HOC/addLogger";
 
 function Header(props) {
     return (
         <header>
             <Stats todos={props.todos}/>
-            <h1><span>{props.subtitle}</span> {props.title}</h1>
+            <h1><i>{props.newProp}</i><span>{props.subtitle}</span> {props.title}</h1>
         </header>
     )
 }
@@ -20,4 +21,4 @@ function Header(props) {
 //     title: "React Todo"
 // }
 
-export default Header;
+export default addLoggerHOC(Header);
